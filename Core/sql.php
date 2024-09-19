@@ -3,23 +3,22 @@ function insert(string $entidade, array $dados) : string
 {
     $instrucao = "INSERT INTO {$entidade}";
 
-    $campos = implode {', ', array_keys ($dados));
+    $campos = implode (', ', array_keys ($dados));
     $valores = implode (', ', array_values ($dados));
 
     $instrucao .= " ({$campos})";
     $instrucao .= " VALUES ({$valores})";
 
     return $instrucao;
-    }
 }
                     //UPDATE
-function update {string $entidade, array $dados, array $criterio = []) : string
+function update (string $entidade, array $dados, array $criterio = []) : string
 {
     $instrucao = "UPDATE {$entidade}";
 
     foreach($dados as $campos => $dados)
     {
-        $set [] = "{$campo} = {$dados}";
+        $set [] = "{$campos} = {$dados}";
     }
 
     $instrucao .= ' SET ' . implode(', ', $set);
@@ -66,7 +65,7 @@ function select(string $entidade, array $campos, array $criterio = [], string $o
             $instrucao .= ' ' . implode(' ', $expressao);
         }
     }
-    if(!empty($criterio as $expressao))
+    if(!empty($ordem))
     {
         $instrucao .= " ORDER BY $ordem ";
     }
