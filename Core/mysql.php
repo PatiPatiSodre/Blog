@@ -143,7 +143,7 @@ function deleta(string $entidade, array $criterio = []) : bool
 }
 
                 //Function BUSCAR
-function buscar(string $entidade, array $campos = ['*'], array $criterio = [], string $ordem = null) : array
+function buscar(string $entidade, array $campos = ['*'], array $criterio = [], string $ordem = null)
 {
     $retorno = false;
     $coringa_criterio = [];
