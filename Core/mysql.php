@@ -168,6 +168,39 @@ function buscar(string $entidade, array $campos = ['*'], array $criterio = [], s
         $$nome_campo = $dado;
     }
 
-    $instrucao = select()
+    $instrucao = select ($entidade, $campos, $coringa_criterio, $ordem);
+
+    $conexao = 'conecta' ();
+
+    $stmt = mysqli_prepare($conexao, $instrucao);
+
+    if(isset($tipo))
+    {
+        $comando = 'mysqli_stmt_bind_param($stmt,';
+        $comando .= "'" . implode('', $tipo) . "'";
+        $comando .= ', $' . implode(', $', $campo_criterio);
+        $comando .= ');';
+
+        eval ($comando);
+    }
 }
+
+mysqli_stmt_execute($stmt);
+
+if($result = mysqli_stmt_get_result($stmt))
+{
+    $retorno = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    mysqli_free_result($result);
+}
+
+$_SESSION['errors'] = mysqli_stmt_error_list($stmt);
+
+mysqli_stmt_close($stmt);
+
+'desconecta'($conexao);
+
+$retorno = $retorno;
+
+return $retorno;
 ?>
