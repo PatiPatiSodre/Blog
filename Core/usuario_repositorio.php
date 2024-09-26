@@ -49,7 +49,7 @@ switch ($acao)
 
                 $retorno = buscar 
                 {
-                    'usuario',
+                    'usuario'
                     ['id', 'nome', 'email', 'senha', 'adm'],
                     $criterio
                 };
