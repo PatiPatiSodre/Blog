@@ -49,9 +49,9 @@ switch ($acao)
 
                 $retorno = buscar 
                 {
-                    'usuario'
+                    'usuario',
                     ['id', 'nome', 'email', 'senha', 'adm'],
-                    $criterio
+                    $criterio;
                 };
                 if(count($retorno) > 0)
                 {
