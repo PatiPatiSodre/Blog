@@ -3,7 +3,7 @@ session_start();
 require_once '../include/funcoes.php';
 require_once 'conexao_mysql.php';
 require_once 'sql.php';
-require_once 'mysqli.php';
+require_once 'mysql.php';
 $salt = '$exemplosaltifsp';
 
 foreach ($_POST as $indice => $dado)
