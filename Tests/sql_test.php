@@ -1,14 +1,14 @@
 <?php
     require_once '../Core/sql.php';
 
-    $id    = 1;
-    $nome  = 'Patricia';
-    $emai  = 'patricia.sodre@aluno.ifsp.edu.br';
-    $senha = '123foiii';
-    $dados = ['nome' => $nome,'email' => $emai,'senha' => $senha];
+    $id       = 1;
+    $nome     = 'Patricia';
+    $emai     = 'patricia.sodre@aluno.ifsp.edu.br';
+    $senha    = '123foiii';
+    $dados    = ['nome' => $nome,'email' => $emai,'senha' => $senha];
     $entidade = 'usuario';
     $criterio = [['id', '=', $id]];
-    $campos = ['id', 'nome', 'email'];
+    $campos   = ['id', 'nome', 'email'];
 
     print_r($dados);
     echo '<br>';
