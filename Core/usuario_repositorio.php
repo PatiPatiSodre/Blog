@@ -31,6 +31,7 @@ switch ($acao)
         );
 
         break;
+        
         case 'update':
             $id         = (int)$id;
             $dados      = [
