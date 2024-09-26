@@ -25,34 +25,43 @@ switch ($acao)
             'senha' => crypt($senha, $salt)
         ];
 
-        insere(
+        insere (
             'usuario',
             $dados
         );
+
         break;
         case 'update':
-            $id = (int)$id;
-            $dados = [
+            $id         = (int)$id;
+            $dados      = [
                 'nome'  => $nome,
                 'email' => $email
             ];
 
             $criterio = [
-                ['id', '-', $id]
+                ['id', '=', $id]
             ];
+
+            atualiza (
+                'usuario',
+                $dados,
+                $criterio
+            );
             break;
+
             case 'login':
                 $criterio = [
-                    ['email', '-', $email],
-                    ['id', 'nome', 'email', 'senha', 'adm'],
+                    ['email', '=', $email],
+                    ['AND', 'ativo', '=', 1]
                 ];
 
                 $retorno = buscar 
-                {
+                (
                     'usuario',
                     ['id', 'nome', 'email', 'senha', 'adm'],
-                    $criterio;
-                };
+                    $criterio
+                );
+            
                 if(count($retorno) > 0)
                 {
                     if(crypt($senha, $salt) == $retorno[0] ['senha'])
@@ -67,22 +76,24 @@ switch ($acao)
                     }
                 }
                 break;
+
                 case 'logout':
                 session_destroy();
                 break;
+
                 case 'status':
                     $id    = (int) $id;
                     $valor = (int) $valor;
 
                     $dados = [
-                        'ativo' => $valor;
+                        'ativo' => $valor
                     ];
 
                     $criterio = [
                         ['id', '=', $id]
                     ];
 
-                    atualiza(
+                    atualiza (
                         'usuario',
                         $dados,
                         $criterio
@@ -96,10 +107,14 @@ switch ($acao)
                         $valor = (int) $valor;
 
                         $dados = [
+                            'adm' => $valor
+                        ];
+
+                        $criterio = [
                             ['id', '=', $id]
                         ];
 
-                        atualiza(
+                        atualiza (
                             'usuario',
                             $dados,
                             $criterio
