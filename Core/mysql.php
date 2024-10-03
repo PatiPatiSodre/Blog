@@ -57,10 +57,12 @@ function atualiza(string $entidade, array $dados, array $criterio = [])
         {
             $nome_campo = $nome_campo . '_' . rand();
         }
+
         $campo_criterio [] = $nome_campo;
 
         $$nome_campo = $dado;
     }
+    
     $instrucao = update($entidade, $coringa_dados, $coringa_criterio);
 
     $conexao = conecta ();

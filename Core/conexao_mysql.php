@@ -1,8 +1,9 @@
-<?php           //Function CONECTA
+<?php           
+            //CONECTA
 function conecta() : mysqli
 {
     $servidor = 'localhost';
-    $banco    = 'Blog';
+    $banco    = 'blog';
     $port     = 3307;
     $usuario  = 'root';
     $senha    = '';
@@ -17,7 +18,7 @@ function conecta() : mysqli
     }
     return $conexao;
 }
-            //Function DESCONECTA
+            //DESCONECTA
 function desconecta ($conexao)
 {
     mysqli_close ($conexao);
