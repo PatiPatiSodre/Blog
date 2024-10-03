@@ -4,7 +4,7 @@
 
     if(!isset($_SESSION['login']))
     {
-        header('Location:login_formulario.php');
+        header('Location: login_formulario.php');
         exit;
     }
 ?>
