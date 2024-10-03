@@ -13,7 +13,7 @@ function insere(string $entidade, array $dados) : bool
 
     $instrucao = insert($entidade, $coringa);
 
-    $conexao = 'conecta' ();
+    $conexao = conecta ();
 
     $stmt = mysqli_prepare($conexao, $instrucao);
 
@@ -27,7 +27,7 @@ function insere(string $entidade, array $dados) : bool
 
     mysqli_stmt_close($stmt);
 
-    'desconecta'($conexao);
+    desconecta ($conexao);
 
     return $retorno;
 }
@@ -63,7 +63,7 @@ function atualiza(string $entidade, array $dados, array $criterio = [])
     }
     $instrucao = update($entidade, $coringa_dados, $coringa_criterio);
 
-    $conexao = 'conecta'();
+    $conexao = conecta ();
 
     $stmt = mysqli_prepare($conexao, $instrucao);
 
@@ -86,7 +86,7 @@ function atualiza(string $entidade, array $dados, array $criterio = [])
 
     mysqli_stmt_close($stmt);
 
-    'desconecta' ($conexao);
+    desconecta ($conexao);
 
     return $retorno;
 }
@@ -115,7 +115,7 @@ function deleta(string $entidade, array $criterio = []) : bool
 
     $instrucao = delete($entidade, $coringa_criterio);
 
-    $conexao = 'conecta'();
+    $conexao = conecta ();
 
     $stmt = mysqli_prepare($conexao, $instrucao);
 
@@ -137,7 +137,7 @@ function deleta(string $entidade, array $criterio = []) : bool
 
     mysqli_stmt_close($stmt);
 
-    'desconecta'($conexao);
+    desconecta ($conexao);
 
     return $retorno;
 }
@@ -170,7 +170,7 @@ function buscar(string $entidade, array $campos = ['*'], array $criterio = [], s
 
     $instrucao = select ($entidade, $campos, $coringa_criterio, $ordem);
 
-    $conexao = 'conecta' ();
+    $conexao = conecta ();
 
     $stmt = mysqli_prepare($conexao, $instrucao);
 
@@ -198,7 +198,7 @@ $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
 
 mysqli_stmt_close($stmt);
 
-'desconecta'($conexao);
+desconecta ($conexao);
 
 $retorno = $retorno;
 
