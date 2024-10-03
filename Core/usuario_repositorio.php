@@ -13,7 +13,7 @@ foreach ($_POST as $indice => $dado)
 
 foreach ($_GET as $indice => $dado)
 {
-    $$indice = LimparDados ($dado);
+    $$indice = LimparDados($dado);
 }
 
 switch ($acao)
@@ -50,18 +50,17 @@ switch ($acao)
             );
             break;
 
-            case 'login':
-                $criterio = [
-                    ['email', '=', $email],
-                    ['AND', 'ativo', '=', 1]
-                ];
+        case 'login':
+            $criterio = [
+                ['email', '=', $email],
+                ['AND', 'ativo', '=', 1]
+            ];
 
-                $retorno = buscar 
-                (
-                    'usuario',
-                    ['id', 'nome', 'email', 'senha', 'adm'],
-                    $criterio
-                );
+            $retorno = buscar (
+                'usuario',
+                ['id', 'nome', 'email', 'senha', 'adm'],
+                $criterio
+            );
             
                 if(count($retorno) > 0)
                 {
@@ -78,7 +77,7 @@ switch ($acao)
                 }
                 break;
 
-                case 'logout':
+            case 'logout':
                 session_destroy();
                 break;
 
