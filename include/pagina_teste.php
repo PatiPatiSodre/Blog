@@ -15,7 +15,7 @@
             <div>
                 <div class="row" style="min-height: 500px;">
                 <div class="col-md-12">
-                    <?php include 'Include/menu.php'; ?>
+                    <?php include 'include/menu.php'; ?>
                 </div>
                 <div class="col-md-10" style="padding-top: 50px;">
                 <h2>Pagina teste include</h2>
