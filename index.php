@@ -24,7 +24,7 @@
 
                 <?php
                     require_once 'include/funcoes.php';
-                    require_once 'Core/conexao.php';
+                    require_once 'Core/conexao_mysql.php';
                     require_once 'Core/sql.php';
                     require_once 'Core/mysql.php';
 
