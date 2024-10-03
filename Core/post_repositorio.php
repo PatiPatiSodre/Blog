@@ -18,20 +18,21 @@ foreach($_GET as $indice => $dado)
 
 $id = (int)$id;
 
-switch(acao)
+switch($acao)
 {
     case 'insert':
         $dados = [
             'titulo'        => $titulo,
-            'texto'         => $titulo,
+            'texto'         => $texto,
             'data_postagem' => "data_postagem $hora_postagem",
             'usuario_id'    => $_SESSION['login'] ['usuario'] ['id']
         ];
-        insere{
+        insere(
             'post',
-            $dados;
-        };
+            $dados
+        );
         break;
+
         case 'update':
             $dados = [
                 'titulo'        => $titulo,
@@ -51,6 +52,7 @@ switch(acao)
             );
 
             break;
+            
         case 'delete':
             $criterio = [
                 ['id', '=', $id]
