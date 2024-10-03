@@ -5,7 +5,7 @@
 
 <div class="card">
     <div class="card-header">
-        <h1> Projeto Blogem PHP + MySQL IFSP =  PATRÍCIA</h1>
+        <h1> Projeto Blog em PHP + MySQL IFSP - Patrícia</h1>
 </div>
 
 

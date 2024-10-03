@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>Post | Projeto para Web com PHP</title>
-        <link rel="stylesheet" href="lib/bootstrap-4.2.1-dist/cssbootstrap.min.css">
+        <link rel="stylesheet" href="lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <?php
-                        include 'Include/topo.php';
+                        include 'include/topo.php';
                     ?>
                 </div>
             <div>
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-md-12">
                 <?php
-                    include 'Include/rodape.php';
+                    include 'include/rodape.php';
                 ?>
             </div>
         </div>
