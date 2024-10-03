@@ -1,3 +1,9 @@
+Drop DataBase IF EXISTS BLOG;
+
+Create DataBase BLOG;
+
+Use BLOG;
+
 Create Table usuario
 (
     id           int NOT NULL AUTO_INCREMENT,
