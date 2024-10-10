@@ -9,7 +9,7 @@ Create Table usuario
     id           int NOT NULL AUTO_INCREMENT,
     nome         VARCHAR(50) NOT NULL,
     email        VARCHAR(255) NOT  NULL,
-    senha        VARCHAR(60) NOT NULL,
+    senha        CHAR(60) NOT NULL,
     data_criacao datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
     ativo        tinyint NOT NULL DEFAULT '0',
     adm          tinyint NOt NULL DEFAULT '0',
