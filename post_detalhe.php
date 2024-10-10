@@ -66,4 +66,6 @@
         </div>
     </div>
 </div>
-<script src="lib/bootstrap-4.2.1-disc/"
+<script src="lib/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+</body>
+</html>
