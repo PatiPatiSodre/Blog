@@ -3,7 +3,7 @@
 function conecta() : mysqli
 {
     $servidor = 'localhost';
-    $banco    = 'Blog';
+    $banco    = 'blog';
     $port     = 3306;
     $usuario  = 'root';
     $senha    = '';
@@ -23,3 +23,4 @@ function desconecta ($conexao)
 {
     mysqli_close ($conexao);
 }
+?>
