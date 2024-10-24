@@ -15,6 +15,7 @@ function insere(string $entidade, array $dados) : bool
 
     $conexao = conecta ();
 
+    //para conectar com o sql
     $stmt = mysqli_prepare($conexao, $instrucao);
 
     eval('mysqli_stml_bind_param($stmt, \'' . implode('',$tipo) . '\',$' . implode(', $', array_keys($dados)) . ');');
@@ -171,7 +172,7 @@ function buscar(string $entidade, array $campos = ['*'], array $criterio = [], s
     }
 
     $instrucao = select ($entidade, $campos, $coringa_criterio, $ordem);
-
+// testar o banco
     $conexao = conecta ();
 
     $stmt = mysqli_prepare($conexao, $instrucao);
@@ -195,14 +196,14 @@ if($result = mysqli_stmt_get_result($stmt))
     mysqli_free_result($result);
 }
 
-$_SESSION['errors'] = mysqli_stmt_error_list($stmt);
+    $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
 
-mysqli_stmt_close($stmt);
+    mysqli_stmt_close($stmt);
 
-desconecta ($conexao);
+    desconecta ($conexao);
 
-$retorno = $retorno;
+    $retorno = $retorno;
 
-return $retorno;
+    return $retorno;
 }
 ?>
