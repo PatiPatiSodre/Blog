@@ -77,7 +77,7 @@
             <div>
                 <div class="list-group">
                     <?php
-                    foreach($post as $post):
+                    foreach($posts as $post):
                         $data = date_create($post['data_postagem']);
                         $data = date_format($data, 'd/m/y H:i:s');
                     ?>
