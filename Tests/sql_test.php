@@ -5,7 +5,10 @@
     $nome     = 'Patricia';
     $emai     = 'patricia.sodre@aluno.ifsp.edu.br';
     $senha    = '123foiii';
-    $dados    = ['nome' => $nome,'email' => $emai,'senha' => $senha];
+    $dados    = ['nome' => $nome,
+                'email' => $emai,
+                'senha' => $senha];
+                
     $entidade = 'usuario';
     $criterio = [['id', '=', $id]];
     $campos   = ['id', 'nome', 'email'];

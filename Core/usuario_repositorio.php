@@ -15,7 +15,7 @@ foreach ($_GET as $indice => $dado)
 {
     $$indice = LimparDados($dado);
 }
-
+// verifica o banco
 switch ($acao)
 {
     case 'insert':
