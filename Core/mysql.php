@@ -1,6 +1,6 @@
 <?php
           //FUCTION insere
-function insere(string $entidade, array $dados): bool //insri novos registros na tabela
+function insere(string $entidade, array $dados): bool //inserir novos registros na tabela
 {
   $retorno = false;
 
