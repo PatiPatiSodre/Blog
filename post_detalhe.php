@@ -15,7 +15,7 @@
         [
             'titulo',
             'data_postagem',
-            'testo',
+            'texto',
             '(select nome
                 from usuario
                 where usuario.id = post.usuario_id) as nome'
