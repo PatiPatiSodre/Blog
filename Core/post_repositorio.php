@@ -2,7 +2,7 @@
 session_start();
 require_once '../include/valida_login.php';
 require_once '../include/funcoes.php';
-require_once 'conexao_mysql.php';
+require_once 'conexao_mysql.php';               // inclui os arquivos
 require_once 'sql.php';
 require_once 'mysql.php';
 
@@ -10,7 +10,7 @@ foreach($_POST as $indice => $dado)
 {
     $$indice = LimparDados($dado);
 }
-
+                        
 foreach($_GET as $indice => $dado)
 {
     $$indice = LimparDados($dado);
@@ -65,6 +65,6 @@ switch($acao)
 
             break;
 }
-
+    // volta  para a pagina index
 header('Location: ../index.php');
 ?>
