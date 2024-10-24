@@ -40,6 +40,7 @@ function atualiza(string $entidade, array $dados, array $criterio = []): bool
     $tipo[] = gettype($dado)[0];
     $$campo = $dado;
   }
+
   foreach ($criterio as $expressao)
   {
     $dado = $expressao[count($expressao) - 1];
@@ -47,12 +48,14 @@ function atualiza(string $entidade, array $dados, array $criterio = []): bool
     $expressao[count($expressao) - 1] = '?';
     $coringa_criterio[] = $expressao;
     $nome_campo = (count($expressao) < 4) ? $expressao[0] : $expressao[1];
+
     if (isset($nome_campo)) {
       $nome_campo = $nome_campo . '_' . rand();
     }
     $campos_criterio[] = $nome_campo;
     $$nome_campo = $dado;
   }
+
   $instrucao = update($entidade, $coringa_dados, $coringa_criterio);
   $conexao = conecta();
   $stmt = mysqli_prepare($conexao, $instrucao);
@@ -64,6 +67,7 @@ function atualiza(string $entidade, array $dados, array $criterio = []): bool
     $comando .= ');';
     eval($comando);
   }
+
   mysqli_stmt_execute($stmt);
   $retorno = (bool)mysqli_stmt_affected_rows($stmt);
   $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
@@ -71,6 +75,7 @@ function atualiza(string $entidade, array $dados, array $criterio = []): bool
   desconecta($conexao);
   return $retorno;
 }
+
 function deleta(string $entidade, array $criterio = []): bool
 {
   $retorno = false;
@@ -94,6 +99,7 @@ function deleta(string $entidade, array $criterio = []): bool
     $comando .= ');';
     eval($comando);
   }
+
   mysqli_stmt_execute($stmt);
   $retorno = (bool)mysqli_stmt_affected_rows($stmt);
   $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
@@ -101,6 +107,7 @@ function deleta(string $entidade, array $criterio = []): bool
   desconecta($conexao);
   return $retorno;
 }
+
 function buscar(string $entidade, array $campos = ['*'], array $criterio = [], string $ordem = null): array
 {
   $retorno = false;
