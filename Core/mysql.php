@@ -22,7 +22,7 @@ function insere(string $entidade, array $dados): bool //inserir novos registros 
   desconecta($conexao);
   return $retorno;
 }
-function atualiza(string $entidade, array $dados, array $criterio = []): bool
+function atualiza(string $entidade, array $dados, array $criterio = []): bool // atualiza registros
 {
   $retorno = false;
   foreach ($dados as $campo => $dado)
@@ -67,11 +67,12 @@ function atualiza(string $entidade, array $dados, array $criterio = []): bool
   return $retorno;
 }
 
-function deleta(string $entidade, array $criterio = []): bool
+function deleta(string $entidade, array $criterio = []): bool // tabela onde os registros vão ser deletados
 {
   $retorno = false;
   $coringa_criterio = [];
-  foreach ($criterio as $expressao) {
+  foreach ($criterio as $expressao)
+  {
     $dado = $expressao[count($expressao) - 1];
     $tipo[] = gettype($dado)[0];
     $expressao[count($expressao) - 1] = '?';
